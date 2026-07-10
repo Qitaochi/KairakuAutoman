@@ -12,13 +12,16 @@
   --color-black: black;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   position: relative;
   color: var(--color-letter);
   font-family: "Ubuntu", "M PLUS Rounded 1c", sans-serif;
   font-weight: 400;
   font-style: normal;
-  line-height: 1.5em;
   margin: 0;
 }
 
@@ -35,6 +38,17 @@ hr {
 
 header {
   background-color: var(--color-white);
+}
+
+header h1 {
+  font-family: "Stick", sans-serif;
+  font-size: 80px;
+  color: white;
+  -webkit-text-stroke: 10px red;
+  paint-order: stroke;
+  filter: drop-shadow(5px 5px 5px var(--color-gray));
+  margin: 0 auto;
+  padding: 0.1em;
 }
 
 footer {
@@ -64,6 +78,7 @@ h2 {
 
 p {
   text-align: left;
+  line-height: 1.5em;
 }
 
 a,
