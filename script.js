@@ -14,7 +14,7 @@ $(function () {
     dots = [];
     $("#background").children().each(function (i, dot) {
         dots[i] = {
-            animState: 1,
+            animState: 2,
             size: Math.random() * 400 + 100
         };
         $(dot).css({
@@ -25,7 +25,8 @@ $(function () {
             height: dots[i].size
         });
     });
-    /*
+
+    /*アニメーションいらなかった
     setInterval(() => {
         $("#background").children().each(function (i, dot) {
             switch (dots[i].animState) {
@@ -36,7 +37,7 @@ $(function () {
                             width: dots[i].size,
                             height: dots[i].size
                         },
-                        dots[i].size * 50,
+                        dots[i].size * 20,
                         "easeInOutCubic",
                         function () {
                             dots[i].animState = 2;
@@ -49,7 +50,7 @@ $(function () {
                             width: "0",
                             height: "0"
                         },
-                        dots[i].size * 50,
+                        dots[i].size * 20,
                         "easeInOutCubic", function () {
                             dots[i].animState = 1;
                         });
