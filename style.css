@@ -4,7 +4,6 @@
   --color-green-dark: cadetblue;
   --color-yellow-light: lightyellow;
   --color-yellow-dark: goldenrod;
-<<<<<<< HEAD
   --color-blue-light: lightcyan;
   --color-letter: dimgray;
   --color-background: rgb(240, 240, 240);
@@ -15,10 +14,6 @@
 
 html {
   scroll-behavior: smooth;
-=======
-  --color-letter: dimgray;
-  --color-background: rgb(240, 240, 240);
->>>>>>> origin/main
 }
 
 body {
@@ -36,7 +31,6 @@ main {
   font-weight: 400;
   font-style: normal;
   text-align: center;
-<<<<<<< HEAD
   background-color: var(--color-background);
 }
 
@@ -56,18 +50,6 @@ footer {
 
 footer hr {
   color: var(--color-black);
-=======
-}
-
-footer {
-  background-color: white;
-  text-align: center;
-  background-color: var(--color-yellow-light);
-}
-
-footer hr {
-  color: black;
->>>>>>> origin/main
 }
 
 footer div {
@@ -75,7 +57,6 @@ footer div {
 }
 
 section {
-<<<<<<< HEAD
   text-align: left;
 }
 
@@ -88,9 +69,6 @@ h2 {
 
 p {
   text-align: left;
-=======
-  text-align: center;
->>>>>>> origin/main
 }
 
 a,
@@ -101,18 +79,14 @@ a:visited {
   margin-bottom: 1px;
 }
 
-<<<<<<< HEAD
 strong {
   background-color: yellow;
 }
 
-=======
->>>>>>> origin/main
 img {
   width: 750px;
 }
 
-<<<<<<< HEAD
 table {
   border-collapse: collapse;
   line-height: 2em;
@@ -218,8 +192,4 @@ tr {
   margin: 0 auto;
   border: 1px var(--color-green-dark) solid;
   border-radius: 10px;
-=======
-.container {
-  width: 750px;
->>>>>>> origin/main
 }
