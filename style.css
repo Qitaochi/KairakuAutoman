@@ -107,6 +107,7 @@ tr {
 
 #background {
   position: absolute;
+  top: 0;
   overflow: hidden;
   z-index: -1;
   width: 100%;
