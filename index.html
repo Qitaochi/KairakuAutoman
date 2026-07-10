@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Anta&family=M+PLUS+Rounded+1c&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./jQuery/jquery-4.0.0.min.js"></script>
+    <script src="./jQuery/jquery.easing.min.js"></script>
+    <title>快楽オートマン - 中尾煌人</title>
+  </head>
+
+  <body>
+    <main>
+      <header>
+        <img id="imgLogo" src="./img/2026-07-07-01.png" alt="快楽オートマン" />
+      </header>
+      <hr />
+      <article>
+        <section>
+          <div class="container">
+            <div class="titleBox">
+              <h1>快楽オートマンって？</h1>
+            </div>
+            <p>このシステムは、<strong>クレジットカードをついつい使いすぎてしまうのを防ぐ</strong>ために、利用状況を分析するためのスプレッドシートに<strong>利用履歴を自動で保存</strong>してくれるシステムです。</p>
+            <div class="remark">
+              <img src="./img/Hinagi_Def.png" />
+              <div><p>表計算ソフトならグラフとか作れて分析しやすいなと思って。</p></div>
+            </div>
+            <div class="remark">
+              <img src="./img/Hinagi_Chill.png" />
+              <div><p>前にExcelに毎回手入力してたんですけどめんどくさくなっちゃって。結局やらなくなっちゃったんですよね。</p></div>
+            </div>
+            <div class="remark">
+              <img src="./img/Hinagi_Laugh.png" />
+              <div><p>じゃあそのめんどくさい処理は<strong>自動で</strong>やらせてしまおうという魂胆です！</p></div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="container">
+            <div class="titleBox">
+              <h1>概要</h1>
+            </div>
+            <h2>technics</h2>
+            <table>
+              <tbody>
+                <tr>
+                  <th>環境</th>
+                  <th>言語</th>
+                  <th>出力</th>
+                </tr>
+                <tr>
+                  <td>Google Apps Script</td>
+                  <td>JavaScript</td>
+                  <td>Googleスプレッドシート</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="remark">
+              <img src="./img/Hinagi_Def.png" />
+              <div><p>システム自体はGASで1日1回自動で実行され、出力結果は私個人のスプレッドシートに出るので、UIとかはないです。</p></div>
+            </div>
+            <div class="remark">
+              <img src="./img/Hinagi_Chill.png" />
+              <div><p>ちなみに<strong>ターゲットは「私」</strong>です。</p></div>
+            </div>
+            <h2>algorithm</h2>
+            <div class="algorithm">
+              <p>毎日19:00に自動実行</p>
+              <h3>👇️</h3>
+              <p>Gmailにある「カード利用のお知らせ」のメール2件分を取得</p>
+              <h3>👇️</h3>
+              <p>メール本文にある、利用日・利用先・利用金額を取得</p>
+              <h3>👇️</h3>
+              <p>データを整えてスプレッドシートに保存</p>
+            </div>
+            <div class="remark">
+              <img src="./img/Hinagi_Def.png" />
+              <div>
+                <p><strong>工夫したこと</strong>として、記録の抜けや重複がないように、メールは複数件取得し、スプレッドシートを探索しています。スプレッドシートへの読み込みや書き込みは重い処理なので、探索の際には<strong>一気にすべて読み込み</strong>、書き込みの際にも<strong>まとめて書き込む</strong>ようにしました。</p>
+              </div>
+            </div>
+            <div class="remark">
+              <img src="./img/Hinagi_Laugh.png" />
+              <div>
+                <p>またスプレッドシートには、月ごとの利用合計を求める関数も記録しているので、これで来月末にいくら引き落とされるのかがわかるようになっています。</p>
+              </div>
+            </div>
+            <div class="illust">
+              <img src="./img/screenshot1.png" alt="出力結果プレビュー" />
+            </div>
+            <div class="remark">
+              <img src="./img/Hinagi_Cry.png" />
+              <div>
+                <p>出力結果はこんな感じです。新しい利用があるたびに増えていきます。お金をください。</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="container">
+            <div class="titleBox">
+              <h1>今後</h1>
+            </div>
+            <br />
+            <div class="illust">
+              <img src="img/screenshot2.png" alt="ディスコード通知プレビュー" />
+            </div>
+            <p>新しい利用があったときに、普段からよく使っている、Discordに通知するようにできたら便利だなと思いました。</p>
+            <p>しかし、Webhookがどういうわけかうまく動かなかったため、Discordのボットを自作して通知してみたいなと思いました。</p>
+            <div class="remark">
+              <img src="./img/Hinagi_Chill.png" />
+              <div>
+                <p>Discordボットは作ったことがないので、これを機会に学んでみたいです。</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="container">
+            <div class="titleBox">
+              <h1>最後に</h1>
+            </div>
+            <div class="remark">
+              <img src="./img/Hinagi_Def.png" />
+              <div>
+                <p>GASについては初めて触りましたが、Gmailの取得やスプレッドシートの操作など、アカウントに関することが様々にできて面白かったです。</p>
+              </div>
+            </div>
+            <div class="remark">
+              <img src="./img/Hinagi_Chill.png" />
+              <div>
+                <p>身近な困りごとをシステムで解決するのが私の趣味のひとつであるので、GASはそれを実現しやすい環境だなと思いました。</p>
+              </div>
+            </div>
+            <div class="remark">
+              <img src="./img/Hinagi_Laugh.png" />
+              <div>
+                <p>またなにか面白いアイデアが浮かんだらやってみようと思います。</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+    <footer>
+      <hr />
+      <div>
+        <a href="#">top</a><br />
+        © 北落合 2026<br />
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

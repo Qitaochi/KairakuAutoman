@@ -1,0 +1,195 @@
+:root {
+  --color-green-light: honeydew;
+  --color-green: rgb(127, 255, 149);
+  --color-green-dark: cadetblue;
+  --color-yellow-light: lightyellow;
+  --color-yellow-dark: goldenrod;
+  --color-blue-light: lightcyan;
+  --color-letter: dimgray;
+  --color-background: rgb(240, 240, 240);
+  --color-white: white;
+  --color-gray: gray;
+  --color-black: black;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  color: var(--color-letter);
+  font-family: "Ubuntu", "M PLUS Rounded 1c", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5em;
+  margin: 0;
+}
+
+main {
+  margin: 0 auto;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  background-color: var(--color-background);
+}
+
+hr {
+  margin: 0 auto;
+}
+
+header {
+  background-color: var(--color-white);
+}
+
+footer {
+  background-color: var(--color-white);
+  text-align: center;
+  background-color: var(--color-white);
+}
+
+footer hr {
+  color: var(--color-black);
+}
+
+footer div {
+  padding: 1em;
+}
+
+section {
+  text-align: left;
+}
+
+h2 {
+  display: inline-block;
+  position: relative;
+  left: 1em;
+  border-bottom: 2px dashed var(--color-green-dark);
+}
+
+p {
+  text-align: left;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  color: var(--color-letter);
+  border-bottom: 1px dashed var(--color-letter);
+  margin-bottom: 1px;
+}
+
+strong {
+  background-color: yellow;
+}
+
+img {
+  width: 750px;
+}
+
+table {
+  border-collapse: collapse;
+  line-height: 2em;
+  text-align: center;
+  margin: 0 auto;
+}
+
+th {
+  background-color: var(--color-green-light);
+}
+
+th,
+td {
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+tr {
+  padding-left: 2em;
+  padding-right: 2em;
+  border-bottom: 1px dashed var(--color-green-dark);
+}
+
+.container {
+  width: 750px;
+  margin: 0 auto;
+  padding: 25px;
+  box-shadow: gray 0 10px 10px;
+  background-color: var(--color-white);
+}
+
+.titleBox {
+  text-align: center;
+  color: var(--color-white);
+  background-color: var(--color-green-dark);
+  padding: 0.5em;
+}
+
+.remark {
+  position: relative;
+  left: 1em;
+  width: calc(750px - 2em);
+  display: flex;
+  align-items: center;
+}
+
+.remark img {
+  height: 3em;
+  width: 3em;
+  border: 2px var(--color-green-dark) solid;
+  border-radius: 50%;
+}
+
+.remark div {
+  border-radius: 10px;
+}
+
+.remark p::before {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 2em;
+  width: 2em;
+  top: 50%;
+  left: -1.9em;
+  transform: translateY(-50%);
+  clip-path: polygon(0 50%, 100% 0, 100% 100%);
+  background-color: var(--color-green-light);
+}
+
+.remark p {
+  position: relative;
+  left: 1em;
+  margin: 1em;
+  padding: 1em;
+  background-color: var(--color-green-light);
+  border-radius: 10px;
+  filter: drop-shadow(0 0 1px var(--color-green-dark));
+}
+
+.algorithm {
+  text-align: center;
+}
+
+.algorithm p {
+  display: inline-block;
+  padding: 1em;
+  background-color: var(--color-blue-light);
+  border-radius: 10px;
+  filter: drop-shadow(0 0 1px var(--color-green-dark));
+}
+
+.algorithm h3 {
+  margin: 0 auto;
+}
+
+.illust {
+  text-align: center;
+}
+
+.illust img {
+  width: 80%;
+  margin: 0 auto;
+  border: 1px var(--color-green-dark) solid;
+  border-radius: 10px;
+}
