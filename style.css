@@ -141,16 +141,16 @@ tr {
   position: absolute;
   width: 0;
   height: 0;
+  transform: translateX(-50%);
   border-radius: 50%;
   filter: blur(100px);
 }
 
 .container {
   overflow: hidden;
-  max-width: 750px;
+  max-width: 710px;
   margin: 0 auto;
   padding: 25px;
-  /* box-shadow: gray 0 10px 10px; */
   background-color: var(--color-background);
 }
 
