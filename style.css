@@ -6,7 +6,7 @@
   --color-yellow-dark: goldenrod;
   --color-blue-light: lightcyan;
   --color-letter: dimgray;
-  --color-background: hsla(0, 0%, 100%, 0.8);
+  --color-background: hsla(0, 0%, 100%, 0.7);
   --color-white: white;
   --color-gray: gray;
   --color-black: black;
@@ -102,7 +102,7 @@ strong {
 }
 
 img {
-  max-width: 750px;
+  max-width: 710px;
 }
 
 table {
