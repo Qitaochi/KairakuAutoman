@@ -25,6 +25,11 @@ body {
   margin: 0;
 }
 
+header {
+  text-align: center;
+  background-color: var(--color-white);
+}
+
 main {
   margin: 0 auto;
   font-weight: 400;
@@ -34,10 +39,6 @@ main {
 
 hr {
   margin: 0 auto;
-}
-
-header {
-  background-color: var(--color-white);
 }
 
 header h1 {
@@ -94,7 +95,7 @@ strong {
 }
 
 img {
-  width: 750px;
+  max-width: 750px;
 }
 
 table {
@@ -138,7 +139,8 @@ tr {
 }
 
 .container {
-  width: 750px;
+  overflow: hidden;
+  max-width: 750px;
   margin: 0 auto;
   padding: 25px;
   box-shadow: gray 0 10px 10px;
@@ -155,20 +157,23 @@ tr {
 .remark {
   position: relative;
   left: 1em;
-  width: calc(750px - 2em);
+  max-width: calc(100% - 2em);
   display: flex;
   align-items: center;
 }
 
 .remark img {
   height: 3em;
-  width: 3em;
+  max-width: 3em;
   border: 2px var(--color-green-dark) solid;
   border-radius: 50%;
+  opacity: 0;
 }
 
 .remark div {
   border-radius: 10px;
+  position: relative;
+  left: 100%;
 }
 
 .remark p::before {
@@ -215,8 +220,14 @@ tr {
 }
 
 .illust img {
-  width: 80%;
+  max-width: 80%;
   margin: 0 auto;
   border: 1px var(--color-green-dark) solid;
   border-radius: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  header h1 {
+    font-size: 48px;
+  }
 }

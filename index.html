@@ -2,22 +2,24 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Anta&family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&family=Stick&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./style.css" />
     <script src="./jQuery/jquery-4.0.0.min.js"></script>
     <script src="./jQuery/jquery.easing.min.js"></script>
+    <script src="./jQuery/jquery.inview.min.js"></script>
     <title>快楽オートマン紹介</title>
   </head>
 
   <body>
-    <main>
-      <header>
-        <!-- <img id="imgLogo" src="./img/2026-07-07-01.png" alt="快楽オートマン" /> -->
-        <h1>快楽オートマン</h1>
-      </header>
+    <header>
+      <!-- <img id="imgLogo" src="./img/2026-07-07-01.png" alt="快楽オートマン" /> -->
+      <h1>快楽オートマン</h1>
       <hr />
+    </header>
+    <main>
       <article>
         <section>
           <div class="container">
@@ -45,7 +47,7 @@
               <h1>概要</h1>
             </div>
             <h2>technics</h2>
-            <table>
+            <table id="PC">
               <tbody>
                 <tr>
                   <th>環境</th>
@@ -55,6 +57,22 @@
                 <tr>
                   <td>Google Apps Script</td>
                   <td>JavaScript</td>
+                  <td>Googleスプレッドシート</td>
+                </tr>
+              </tbody>
+            </table>
+            <table id="Mobile">
+              <tbody>
+                <tr>
+                  <th>環境</th>
+                  <td>Google Apps Script</td>
+                </tr>
+                <tr>
+                  <th>言語</th>
+                  <td>JavaScript</td>
+                </tr>
+                <tr>
+                  <th>出力</th>
                   <td>Googleスプレッドシート</td>
                 </tr>
               </tbody>
