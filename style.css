@@ -6,7 +6,7 @@
   --color-yellow-dark: goldenrod;
   --color-blue-light: lightcyan;
   --color-letter: dimgray;
-  --color-background: rgb(240, 240, 240);
+  --color-background: hsla(0, 0%, 100%, 0.8);
   --color-white: white;
   --color-gray: gray;
   --color-black: black;
@@ -53,7 +53,6 @@ header h1 {
 }
 
 footer {
-  background-color: var(--color-white);
   text-align: center;
   background-color: var(--color-white);
 }
@@ -66,8 +65,16 @@ footer div {
   padding: 1em;
 }
 
+article {
+  width: fit-content;
+  margin: 0 auto;
+  box-shadow: gray 0 5px 10px;
+}
+
 section {
   text-align: left;
+  width: fit-content;
+  margin: 0 auto;
 }
 
 h2 {
@@ -143,8 +150,8 @@ tr {
   max-width: 750px;
   margin: 0 auto;
   padding: 25px;
-  box-shadow: gray 0 10px 10px;
-  background-color: var(--color-white);
+  /* box-shadow: gray 0 10px 10px; */
+  background-color: var(--color-background);
 }
 
 .titleBox {
