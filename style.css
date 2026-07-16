@@ -6,7 +6,7 @@
   --color-yellow-dark: goldenrod;
   --color-blue-light: lightcyan;
   --color-letter: dimgray;
-  --color-background: hsla(0, 0%, 100%, 0.7);
+  --color-background: hsla(0, 0%, 100%, 0.8);
   --color-white: white;
   --color-gray: gray;
   --color-black: black;
@@ -163,10 +163,18 @@ tr {
 
 .remark {
   position: relative;
-  left: 1em;
   max-width: calc(100% - 2em);
   display: flex;
   align-items: center;
+}
+
+.remarkL {
+  left: 1em;
+}
+
+.remarkR {
+  right: 1em;
+  justify-content: right;
 }
 
 .remark img {
@@ -174,16 +182,23 @@ tr {
   max-width: 3em;
   border: 2px var(--color-green-dark) solid;
   border-radius: 50%;
-  opacity: 0;
+  opacity: 1;
 }
 
 .remark div {
   border-radius: 10px;
   position: relative;
-  left: 100%;
 }
 
-.remark p::before {
+.reamrkL div {
+  left: 0%;
+}
+
+.remarkR div {
+  right: 0%;
+}
+
+.remarkL p::before {
   content: "";
   position: absolute;
   display: block;
@@ -192,18 +207,38 @@ tr {
   top: 50%;
   left: -1.9em;
   transform: translateY(-50%);
-  clip-path: polygon(0 50%, 100% 0, 100% 100%);
   background-color: var(--color-green-light);
+  clip-path: polygon(0 50%, 100% 0, 100% 100%);
 }
 
 .remark p {
   position: relative;
-  left: 1em;
   margin: 1em;
   padding: 1em;
   background-color: var(--color-green-light);
   border-radius: 10px;
   filter: drop-shadow(0 0 1px var(--color-green-dark));
+}
+
+.remarkL p {
+  left: 1em;
+}
+
+.remarkR p {
+  right: 1em;
+}
+
+.remarkR p::after {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 2em;
+  width: 2em;
+  top: 50%;
+  right: -1.9em;
+  transform: translateY(-50%);
+  background-color: var(--color-green-light);
+  clip-path: polygon(0 0, 0 100%, 100% 50%);
 }
 
 .algorithm {

@@ -28,28 +28,48 @@ class Remark {
     #elem
     #icon
     #remark
-    #showed
-    constructor(element) {
+    constructor(element, left) {
         this.#elem = element;
         this.#icon = $(element).children("img");
         this.#remark = $(element).children("div");
-        this.#showed = false;
 
-        //表示されたときのアニメーション
-        $(this.#elem).on('inview', () => {
-            if (!this.#showed) {
-                this.#showed = true;
-                $(this.#remark).animate({
-                    left: "0"
-                },
-                    500,
-                    "easeOutExpo"
-                );
+        //表示非表示されたときのアニメーション
+        $(this.#elem).on('inview', (event, isInView) => {
+            //表示
+            if (isInView) {
+                if (left) {
+                    $(this.#remark).animate({
+                        left: "0"
+                    },
+                        500,
+                        "easeOutExpo"
+                    );
+                } else {
+                    $(this.#remark).animate({
+                        right: "0"
+                    },
+                        500,
+                        "easeOutExpo"
+                    );
+                }
                 $(this.#icon).animate({
                     opacity: 1
                 },
                     500,
                     "linear")
+            } else {  //非表示
+                if (left) {
+                    $(this.#remark).css({
+                        left: "100%"
+                    })
+                } else {
+                    $(this.#remark).css({
+                        right: "100%"
+                    })
+                }
+                $(this.#icon).css({
+                    opacity: 0
+                })
             }
         });
     }
@@ -80,10 +100,10 @@ $(function () {
         dots[i] = new Dot($(this), Math.random() * 100, Math.random() * 100, Math.random() * 400 + 100, Math.random() * 359)
     });
 
-    let remarks = []
-    $(".remark").each(function (i, elem) {
-        remarks[i] = new Remark($(this));
-    });
+    // let remarks = []
+    // $(".remark").each(function (i, elem) {
+    //     remarks[i] = new Remark($(this), $(this).hasClass(".remarkL"));
+    // });
 
     let responsivePoint = 768;
     let tablePC = new HidableElement($("#PC"), false);
