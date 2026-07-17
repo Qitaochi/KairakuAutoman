@@ -28,28 +28,48 @@ class Remark {
     #elem
     #icon
     #remark
-    #showed
-    constructor(element) {
+    constructor(element, left) {
         this.#elem = element;
         this.#icon = $(element).children("img");
         this.#remark = $(element).children("div");
-        this.#showed = false;
 
-        //表示されたときのアニメーション
-        $(this.#elem).on('inview', () => {
-            if (!this.#showed) {
-                this.#showed = true;
-                $(this.#remark).animate({
-                    left: "0"
-                },
-                    500,
-                    "easeOutExpo"
-                );
+        //表示非表示されたときのアニメーション
+        $(this.#elem).on('inview', (event, isInView) => {
+            //表示
+            if (isInView) {
+                if (left) {
+                    $(this.#remark).animate({
+                        left: "0"
+                    },
+                        500,
+                        "easeOutExpo"
+                    );
+                } else {
+                    $(this.#remark).animate({
+                        right: "0"
+                    },
+                        500,
+                        "easeOutExpo"
+                    );
+                }
                 $(this.#icon).animate({
                     opacity: 1
                 },
                     500,
                     "linear")
+            } else {  //非表示
+                if (left) {
+                    $(this.#remark).css({
+                        left: "120%"
+                    })
+                } else {
+                    $(this.#remark).css({
+                        right: "120%"
+                    })
+                }
+                $(this.#icon).css({
+                    opacity: 0
+                })
             }
         });
     }
@@ -73,6 +93,30 @@ class HidableElement {
     }
 }
 
+class AnimText {
+    #elem
+    constructor(element) {
+        this.#elem = element;
+
+        //表示非表示されたときのアニメーション
+        $(this.#elem).on('inview', (event, isInView) => {
+            //表示
+            if (isInView) {
+                $(this).animate({
+                    left: 0
+                },
+                    500,
+                    "linear")
+            } else {  //非表示
+                $(this).css({
+                    left: "100%"
+                })
+            }
+        });
+
+    }
+}
+
 $(function () {
     //オブジェクト指向にするお
     let dots = [];
@@ -82,7 +126,7 @@ $(function () {
 
     let remarks = []
     $(".remark").each(function (i, elem) {
-        remarks[i] = new Remark($(this));
+        remarks[i] = new Remark($(this), $(this).hasClass("remark remarkL"));
     });
 
     let responsivePoint = 768;
@@ -103,5 +147,4 @@ $(function () {
 
     //ウィンドウサイズ変更時
     $(window).resize(responsive)
-
 })
