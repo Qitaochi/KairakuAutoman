@@ -60,11 +60,11 @@ class Remark {
             } else {  //非表示
                 if (left) {
                     $(this.#remark).css({
-                        left: "100%"
+                        left: "120%"
                     })
                 } else {
                     $(this.#remark).css({
-                        right: "100%"
+                        right: "120%"
                     })
                 }
                 $(this.#icon).css({
@@ -93,6 +93,30 @@ class HidableElement {
     }
 }
 
+class AnimText {
+    #elem
+    constructor(element) {
+        this.#elem = element;
+
+        //表示非表示されたときのアニメーション
+        $(this.#elem).on('inview', (event, isInView) => {
+            //表示
+            if (isInView) {
+                $(this).animate({
+                    left: 0
+                },
+                    500,
+                    "linear")
+            } else {  //非表示
+                $(this).css({
+                    left: "100%"
+                })
+            }
+        });
+
+    }
+}
+
 $(function () {
     //オブジェクト指向にするお
     let dots = [];
@@ -100,10 +124,10 @@ $(function () {
         dots[i] = new Dot($(this), Math.random() * 100, Math.random() * 100, Math.random() * 400 + 100, Math.random() * 359)
     });
 
-    // let remarks = []
-    // $(".remark").each(function (i, elem) {
-    //     remarks[i] = new Remark($(this), $(this).hasClass(".remarkL"));
-    // });
+    let remarks = []
+    $(".remark").each(function (i, elem) {
+        remarks[i] = new Remark($(this), $(this).hasClass("remark remarkL"));
+    });
 
     let responsivePoint = 768;
     let tablePC = new HidableElement($("#PC"), false);
@@ -123,5 +147,4 @@ $(function () {
 
     //ウィンドウサイズ変更時
     $(window).resize(responsive)
-
 })
