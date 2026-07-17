@@ -321,4 +321,12 @@ tr {
   header h1 {
     font-size: 48px;
   }
+
+  .remark {
+    max-width: calc(100% - 2em);
+  }
+
+  .remark img {
+    height: 3em;
+  }
 }
